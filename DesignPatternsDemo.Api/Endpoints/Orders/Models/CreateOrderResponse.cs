@@ -1,5 +1,3 @@
-namespace DesignPatternsDemo.Api.Endpoints.Orders;
+namespace DesignPatternsDemo.Api.Endpoints.Orders.Models;
 
-public record CreateOrderResponse
-{
-}
+public record CreateOrderResponse(string Message, Guid OrderId);

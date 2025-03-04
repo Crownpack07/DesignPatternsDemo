@@ -1,5 +1,5 @@
-namespace DesignPatternsDemo.Api.Endpoints.Orders;
+namespace DesignPatternsDemo.Api.Endpoints.Orders.Models;
 
-public record CreateOrderRequest
-{
-}
+public record CreateOrderRequest(List<OrderItem> Items);
+
+public record OrderItem(string Name);

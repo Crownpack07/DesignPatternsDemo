@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatternsDemo.Api", "DesignPatternsDemo.Api\DesignPatternsDemo.Api.csproj", "{F4A4696B-6E2E-4EC1-993E-FA425C8916FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatternsDemo.Domain", "DesignPatternsDemo.Domain\DesignPatternsDemo.Domain.csproj", "{EF532D52-53B1-4B7A-A609-05C5F0627025}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatternsDemo.Infrastructure", "DesignPatternsDemo.Infrastructure\DesignPatternsDemo.Infrastructure.csproj", "{150E7772-3EA1-4A1D-B9CE-3D68D5103E62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{F4A4696B-6E2E-4EC1-993E-FA425C8916FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4A4696B-6E2E-4EC1-993E-FA425C8916FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4A4696B-6E2E-4EC1-993E-FA425C8916FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF532D52-53B1-4B7A-A609-05C5F0627025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF532D52-53B1-4B7A-A609-05C5F0627025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF532D52-53B1-4B7A-A609-05C5F0627025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF532D52-53B1-4B7A-A609-05C5F0627025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{150E7772-3EA1-4A1D-B9CE-3D68D5103E62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{150E7772-3EA1-4A1D-B9CE-3D68D5103E62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{150E7772-3EA1-4A1D-B9CE-3D68D5103E62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{150E7772-3EA1-4A1D-B9CE-3D68D5103E62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
