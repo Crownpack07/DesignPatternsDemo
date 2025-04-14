@@ -1,3 +1,3 @@
 namespace DesignPatternsDemo.Api.Endpoints.Orders.Models;
 
-public record CreateOrderResponse(Guid OrderId);
+public record GetOrderRequest(Guid OrderId);
