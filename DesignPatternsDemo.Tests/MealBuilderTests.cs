@@ -1,5 +1,6 @@
 ﻿using DesignPatternsDemo.Adaptars.MealAdapters;
 using DesignPatternsDemo.Builders.MealBuilders;
+using DesignPatternsDemo.Domain.Meals;
 using NUnit.Framework;
 
 namespace DesignPatternsDemo.Tests

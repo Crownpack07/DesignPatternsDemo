@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DesignPatternsDemo.Integrations\DesignPatternsDemo.Integrations.csproj" />
+    <ProjectReference Include="..\DesignPatternsDemo.Prototypes\DesignPatternsDemo.Prototypes.csproj" />
+  </ItemGroup>
+
 </Project>
