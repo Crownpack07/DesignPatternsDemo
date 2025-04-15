@@ -1,29 +1,38 @@
 ﻿using DesignPatternsDemo.Domain.Meals;
+using DesignPatternsDemo.Prototypes.MealPrototypes;
 
 namespace DesignPatternsDemo.Builders.MealBuilders
 {
     public class SmallMealBuilder : IMealBuilder
     {
-        private Meal _meal = new();
+        protected Meal Meal { get; set; } = new Meal();
+        protected IBurgerPrototype _burgerPrototype;
+
+        public SmallMealBuilder(IBurgerPrototype burgerPrototype)
+        {
+            this._burgerPrototype = burgerPrototype;
+        }
 
         public void BuildBurger()
         {
-            this._meal.Burger = "Small Burger";
+            var burger = (Burger)this._burgerPrototype.BuildBaseBurger();
+
+            this.Meal.Burger = burger.GetBurger();
         }
 
         public void BuildDrink()
         {
-            this._meal.Drink = "Small Drink";
+            this.Meal.Drink = "Small Drink";
         }
 
         public void BuildSide()
         {
-            this._meal.Side = "Small Side";
+            this.Meal.Side = "Small Side";
         }
 
         public Meal GetMeal()
         {
-            return this._meal;
+            return this.Meal;
         }
     }
 }

@@ -28,21 +28,24 @@ namespace DesignPatternsDemo.Tests
             Assert.That(meal.Side, Is.EqualTo("Curly Fries"));
         }
 
-        //[Test]
-        //public void Build_Fancy_Burger()
-        //{
-        //    // Arrange
-        //    var fancyBurgerAdapter = new FancyBurgerAdapter();
-        //    var builder = new SmallMealBuilder(fancyBurgerAdapter);
-        //    var director = new MealDirector(builder);
+        [Test]
+        public void Build_Fancy_Burger()
+        {
+            // Arrange
+            var baseBurger = BaseBurger;
 
-        //    // Act
-        //    Meal meal = director.Construct();
+            var builder = new SmallMealBuilder(baseBurger);
+            var director = new MealDirector(builder);
 
-        //    // Assert
-        //    Assert.That(meal.Burger, Does.Contain("Wagyu Beef with Spicy Sriracha"));
-        //    Assert.That(meal.Drink, Is.EqualTo("Cola"));
-        //    Assert.That(meal.Side, Is.EqualTo("Curly Fries"));
-        //}
+            // Act
+            Meal meal = director.Construct();
+
+            // Assert
+            Assert.That(meal.Burger, Does.Contain("Design Pat Mac with Tomato"));
+            Assert.That(meal.Drink, Is.EqualTo("Small Drink"));
+            Assert.That(meal.Side, Is.EqualTo("Small Side"));
+        }
+
+        private static Burger BaseBurger => new Burger { Name = "Design Pat Mac", Sauce = "Tomato" };
     }
 }
