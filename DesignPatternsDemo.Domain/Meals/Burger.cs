@@ -7,7 +7,7 @@ namespace DesignPatternsDemo.Domain.Meals
         public string Name { get; set; } = string.Empty;
         public string Sauce { get; set; } = string.Empty;
 
-        public IBurgerPrototype Clone()
+        public IBurgerPrototype BuildBaseBurger()
         {
             return (IBurgerPrototype)this.MemberwiseClone();
         }

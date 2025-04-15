@@ -1,21 +1,22 @@
-﻿using DesignPatternsDemo.Integrations.Meals;
+﻿using DesignPatternsDemo.Domain.Meals;
+using DesignPatternsDemo.Integrations.Meals;
 using DesignPatternsDemo.Prototypes.MealPrototypes;
 
 namespace DesignPatternsDemo.Adaptars.MealAdapters
 {
-    public class FancyBurgerAdapter : IBurgerPrototype
+    public class FancyBurgerAdapter : IBaseAdapter
     {
-
         private  FancyMealIntegrationService _fancyMealIntegrationService = new FancyMealIntegrationService();
 
-        public IBurgerPrototype Clone()
+        public IBurgerPrototype BuildBaseBurger()
         {
-            return new FancyBurgerAdapter();
-        }
+            var fancyDetails = this._fancyMealIntegrationService.GetFancyBurgerDetails();
 
-        public string GetBurger()
-        {
-            return this._fancyMealIntegrationService.GetFancyBurgerDetails();
+            return new Burger
+            {
+                Name = fancyDetails.FancyBurgerName,
+                Sauce = fancyDetails.FancyBurgerSauce
+            };
         }
     }
 }

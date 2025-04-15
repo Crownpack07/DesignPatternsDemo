@@ -17,6 +17,7 @@ namespace DesignPatternsDemo.Directors.MealDirectors
             _builder.BuildBurger();
             _builder.BuildDrink();
             _builder.BuildSide();
+
             return _builder.GetMeal();
         }
     }

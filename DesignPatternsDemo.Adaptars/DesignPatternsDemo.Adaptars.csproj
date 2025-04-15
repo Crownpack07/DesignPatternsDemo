@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DesignPatternsDemo.Domain\DesignPatternsDemo.Domain.csproj" />
     <ProjectReference Include="..\DesignPatternsDemo.Integrations\DesignPatternsDemo.Integrations.csproj" />
     <ProjectReference Include="..\DesignPatternsDemo.Prototypes\DesignPatternsDemo.Prototypes.csproj" />
   </ItemGroup>

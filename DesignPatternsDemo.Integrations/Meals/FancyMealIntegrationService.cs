@@ -1,10 +1,18 @@
-﻿namespace DesignPatternsDemo.Integrations.Meals
+﻿using DesignPatternsDemo.Integrations.Models;
+
+namespace DesignPatternsDemo.Integrations.Meals
 {
     public class FancyMealIntegrationService : IFancyMealIntegrationService
     {
-        public string GetFancyBurgerDetails()
+        public FancyBurgerReadModel GetFancyBurgerDetails()
         {
-            return "Wagyu Beef Burger with Truffle Aioli (from FancyBurgerService)";
+            return new FancyBurgerReadModel
+            {
+                FancyBurgerName = "Wagyu Beef",
+                FancyBurgerDrink = "Wine",
+                FancyBurgerSauce = "Parmasean",
+                FancyBurgerSide = "Veg"
+            };
         }
     }
 }

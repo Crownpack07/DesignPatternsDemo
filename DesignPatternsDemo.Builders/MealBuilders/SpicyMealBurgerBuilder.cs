@@ -15,7 +15,8 @@ namespace DesignPatternsDemo.Builders.MealBuilders
 
         public void BuildBurger()
         {
-            var spicyBurger = (Burger)_burgerPrototype.Clone();
+            var spicyBurger = (Burger)_burgerPrototype.BuildBaseBurger();
+
             spicyBurger.Sauce = "Spicy Sriracha";
 
             this._meal.Burger = spicyBurger.GetBurger();

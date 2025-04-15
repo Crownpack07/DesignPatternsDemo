@@ -10,18 +10,14 @@
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
     <PackageReference Include="NUnit" Version="4.3.2" />
-    <PackageReference Include="xunit" Version="2.9.2" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DesignPatternsDemo.Adaptars\DesignPatternsDemo.Adaptars.csproj" />
     <ProjectReference Include="..\DesignPatternsDemo.Builders\DesignPatternsDemo.Builders.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Using Include="Xunit" />
+    <ProjectReference Include="..\DesignPatternsDemo.Directors\DesignPatternsDemo.Directors.csproj" />
   </ItemGroup>
 
 </Project>

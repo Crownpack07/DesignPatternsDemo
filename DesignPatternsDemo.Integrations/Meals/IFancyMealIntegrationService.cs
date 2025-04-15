@@ -1,7 +1,9 @@
-﻿namespace DesignPatternsDemo.Integrations.Meals
+﻿using DesignPatternsDemo.Integrations.Models;
+
+namespace DesignPatternsDemo.Integrations.Meals
 {
     public interface IFancyMealIntegrationService
     {
-        string GetFancyBurgerDetails();
+        FancyBurgerReadModel GetFancyBurgerDetails();
     }
 }
