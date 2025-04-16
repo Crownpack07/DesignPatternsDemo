@@ -11,8 +11,8 @@ namespace DesignPatternsDemo.Domain.Meals
         public override string ToString()
         {
             return $"{Burger}" +
-                   (Drink != null ? $"with {Drink}" : "") +
-                   (Side != null ? $"and {Side} on the side." : "");
+                   (Drink != null ? $" with {Drink}" : "") +
+                   (Side != null ? $" and {Side} on the side." : "");
         }
     }
 }
