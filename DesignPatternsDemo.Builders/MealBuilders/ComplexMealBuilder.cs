@@ -1,14 +1,31 @@
 ﻿using DesignPatternsDemo.Domain.Meals;
+using DesignPatternsDemo.Prototypes.MealPrototypes;
 
 namespace DesignPatternsDemo.Builders.MealBuilders
 {
     public class ComplexMealBuilder
     {
         private readonly Meal _meal = new();
+        protected IBurgerPrototype _burgerPrototype;
 
-        public ComplexMealBuilder SetBurger(string burger)
+        public ComplexMealBuilder(IBurgerPrototype burgerPrototype)
         {
+            this._burgerPrototype = burgerPrototype;
+        }
+
+        public ComplexMealBuilder SetBurger(string name, string? sauce = null)
+        {
+            var burger = (Burger) _burgerPrototype.Clone();
+
+            burger.Name = name;
+
+            if (sauce != null)
+            {
+                burger.Sauce = sauce;
+            }
+
             this._meal.Burger = burger;
+
             return this;
         }
 

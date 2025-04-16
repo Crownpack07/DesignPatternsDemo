@@ -4,7 +4,7 @@ namespace DesignPatternsDemo.Domain.Meals
 {
     public class Meal
     {
-        public string Burger { get; set; } = string.Empty;
+        public Burger Burger { get; set; } = null!;
         public string? Drink { get; set; }
         public string? Side { get; set; }
 

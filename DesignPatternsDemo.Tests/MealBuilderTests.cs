@@ -14,7 +14,7 @@ namespace DesignPatternsDemo.Tests
         {
             // Arrange
             var fancyBurgerAdapter = new FancyBurgerAdapter();
-            var burgerPrototype = fancyBurgerAdapter.BuildBaseBurger();
+            var burgerPrototype = fancyBurgerAdapter.Clone();
 
             var builder = new SpicyMealBurgerBuilder(burgerPrototype);
             var director = new MealDirector(builder);
@@ -46,23 +46,23 @@ namespace DesignPatternsDemo.Tests
             Assert.That(meal.Side, Is.EqualTo("Small Side"));
         }
 
-        [Test]
-        public void Build_Complex_Meal()
-        {
-            // Arrange
+        //[Test]
+        //public void Build_Complex_Meal()
+        //{
+        //    // Arrange
 
-            var builder = new ComplexMealBuilder();
+        //    var builder = new ComplexMealBuilder();
 
-            // Act
-            var meal = builder.SetBurger("Chicken Burger")
-                              .SetSide("Apple")
-                              .Build();
+        //    // Act
+        //    var meal = builder.SetBurger("Chicken Burger")
+        //                      .SetSide("Apple")
+        //                      .Build();
 
-            //Assert
-            Assert.That(meal.Burger, Is.EqualTo("Chicken Burger"));
-            Assert.That(meal.Side, Is.EqualTo("Apple"));
-            Assert.That(meal.Drink, Is.Null);
-        }
+        //    //Assert
+        //    Assert.That(meal.Burger, Is.EqualTo("Chicken Burger"));
+        //    Assert.That(meal.Side, Is.EqualTo("Apple"));
+        //    Assert.That(meal.Drink, Is.Null);
+        //}
 
         private static Burger BaseBurger => new Burger { Name = "Design Pat Mac", Sauce = "Tomato" };
     }

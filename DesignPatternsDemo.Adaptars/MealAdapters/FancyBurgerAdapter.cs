@@ -8,7 +8,7 @@ namespace DesignPatternsDemo.Adaptars.MealAdapters
     {
         private  FancyMealIntegrationService _fancyMealIntegrationService = new FancyMealIntegrationService();
 
-        public IBurgerPrototype BuildBaseBurger()
+        public IBurgerPrototype Clone()
         {
             var fancyDetails = this._fancyMealIntegrationService.GetFancyBurgerDetails();
 

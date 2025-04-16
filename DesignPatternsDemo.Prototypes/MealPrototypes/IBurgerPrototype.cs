@@ -2,6 +2,6 @@
 {
     public interface IBurgerPrototype
     {
-        IBurgerPrototype BuildBaseBurger();
+        IBurgerPrototype Clone();
     }
 }

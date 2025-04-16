@@ -15,7 +15,7 @@ namespace DesignPatternsDemo.Builders.MealBuilders
 
         public void BuildBurger()
         {
-            var burger = (Burger)this._burgerPrototype.BuildBaseBurger();
+            var burger = (Burger)this._burgerPrototype.Clone();
 
             this.Meal.Burger = burger.GetBurger();
         }
