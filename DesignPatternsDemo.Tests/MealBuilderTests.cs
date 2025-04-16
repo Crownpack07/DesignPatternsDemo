@@ -46,6 +46,8 @@ namespace DesignPatternsDemo.Tests
             Assert.That(meal.Side, Is.EqualTo("Small Side"));
         }
 
+
+
         private static Burger BaseBurger => new Burger { Name = "Design Pat Mac", Sauce = "Tomato" };
     }
 }
