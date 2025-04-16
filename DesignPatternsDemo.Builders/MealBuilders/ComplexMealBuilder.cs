@@ -13,11 +13,14 @@ namespace DesignPatternsDemo.Builders.MealBuilders
             this._burgerPrototype = burgerPrototype;
         }
 
-        public ComplexMealBuilder SetBurger(string name, string? sauce = null)
+        public ComplexMealBuilder SetBurger(string? name = null, string? sauce = null)
         {
             var burger = (Burger) _burgerPrototype.Clone();
 
-            burger.Name = name;
+            if (name != null)
+            {
+                burger.Name = name;
+            }
 
             if (sauce != null)
             {
