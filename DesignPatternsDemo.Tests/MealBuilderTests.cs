@@ -2,6 +2,7 @@
 using DesignPatternsDemo.Builders.MealBuilders;
 using DesignPatternsDemo.Directors.MealDirectors;
 using DesignPatternsDemo.Domain.Meals;
+using DesignPatternsDemo.Prototypes.MealPrototypes;
 using NUnit.Framework;
 
 namespace DesignPatternsDemo.Tests
@@ -63,6 +64,31 @@ namespace DesignPatternsDemo.Tests
         //    Assert.That(meal.Side, Is.EqualTo("Apple"));
         //    Assert.That(meal.Drink, Is.Null);
         //}
+
+        [Test]
+        public void Build_Complex_Spicy_Meal()
+        {
+            // Arrange
+            var baseBurger = BaseBurger;
+            var builder = new ComplexMealBuilder(baseBurger);
+
+            // Act
+            var meal = builder.SetBurger("Chicken Burger", "Cheese")
+                              .SetSide("Fries")
+                              .SetDrink("Cola")
+                              .Build();
+
+            var spicyBuilder = new SpicyMealBurgerBuilder(meal.Burger);
+            var director = new MealDirector(spicyBuilder);
+
+            Meal spicyMeal = director.Construct();
+
+            //Assert
+            Assert.That(spicyMeal.Burger.Name, Is.EqualTo("Chicken Burger"));
+            Assert.That(spicyMeal.Burger.Sauce, Is.EqualTo("Spicy Sriracha"));
+            Assert.That(spicyMeal.Drink, Is.EqualTo("Cola"));
+            Assert.That(spicyMeal.Side, Is.EqualTo("Curly Fries"));
+        }
 
         private static Burger BaseBurger => new Burger { Name = "Design Pat Mac", Sauce = "Tomato" };
     }
