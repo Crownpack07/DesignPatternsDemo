@@ -90,6 +90,31 @@ namespace DesignPatternsDemo.Tests
             Assert.That(spicyMeal.Side, Is.EqualTo("Curly Fries"));
         }
 
+        [Test]
+        public void Build_Fancy_Complex_Spicy_Meal()
+        {
+            // Arrange
+            var fancyBurgerAdapter = new FancyBurgerAdapter();
+            var burgerPrototype = fancyBurgerAdapter.Clone();
+
+            var builder = new ComplexMealBuilder(burgerPrototype);
+
+            // Act
+            var meal = builder.SetBurger()
+                              .Build();
+
+            var spicyBuilder = new SpicyMealBurgerBuilder(meal.Burger);
+            var director = new MealDirector(spicyBuilder);
+
+            Meal spicyMeal = director.Construct();
+
+            //Assert
+            Assert.That(spicyMeal.Burger.Name, Is.EqualTo("Wagyu Beef"));
+            Assert.That(spicyMeal.Burger.Sauce, Is.EqualTo("Spicy Sriracha"));
+            Assert.That(spicyMeal.Drink, Is.EqualTo("Cola"));
+            Assert.That(spicyMeal.Side, Is.EqualTo("Curly Fries"));
+        }
+
         private static Burger BaseBurger => new Burger { Name = "Design Pat Mac", Sauce = "Tomato" };
     }
 }
