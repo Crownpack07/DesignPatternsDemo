@@ -5,43 +5,43 @@ namespace DesignPatternsDemo.Infrastructure.Orders;
 
 public class OrderLocalRepository : IOrderRepository
 {
-    private static List<Order> orders = new List<Order>();
-    public async Task<Order?> GetByIdAsync(Guid id, CancellationToken cancellationToken)
+    private static readonly List<Order> Orders = new List<Order>();
+    public Task<Order?> GetByIdAsync(Guid id, CancellationToken cancellationToken)
     {
-        return orders.FirstOrDefault(o => o.Id == id);
+        return Task.FromResult(Orders.FirstOrDefault(o => o.Id == id));
     }
 
-    public async Task<List<Order>> GetAllAsync(CancellationToken cancellationToken)
+    public Task<List<Order>> GetAllAsync(CancellationToken cancellationToken)
     {
-        return orders;
+        return Task.FromResult(Orders);
     }
 
     public Task AddOrderAsync(Order order, CancellationToken cancellationToken)
     {
-        orders.Add(order);
+        Orders.Add(order);
         return Task.CompletedTask;
     }
 
     public Task UpdateOrderAsync(Order order, CancellationToken cancellationToken)
     {
-        var index = orders.FindIndex(o => o.Id == order.Id);
+        var index = Orders.FindIndex(o => o.Id == order.Id);
         if (index >= 0)
         {
-            orders[index] = order;
+            Orders[index] = order;
         }
         return Task.CompletedTask;
     }
 
     public Task DeleteOrderAsync(Order order, CancellationToken cancellationToken)
     {
-        var index = orders.FindIndex(o => o.Id == order.Id);
+        var index = Orders.FindIndex(o => o.Id == order.Id);
 
         if (index < 0)
         {
             throw new NotFoundException(nameof(Order), order.Id);
         }
         
-        orders.RemoveAt(index);
+        Orders.RemoveAt(index);
         
         return Task.CompletedTask;
     }
