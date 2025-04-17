@@ -2,6 +2,7 @@ using System.Text.Json;
 using DesignPatternsDemo.Api.Endpoints.Orders;
 using DesignPatternsDemo.Api.Endpoints.Orders.Models;
 using DesignPatternsDemo.Api.Endpoints.Orders.Models.InStoreModel;
+using DesignPatternsDemo.Api.Endpoints.Orders.Models.MrD;
 using DesignPatternsDemo.Api.Endpoints.Orders.Models.UberEats;
 using DesignPatternsDemo.Infrastructure;
 using FastEndpoints;
@@ -31,6 +32,7 @@ app.UseFastEndpoints(options =>
                 .SerializeDiscriminatorProperty()
                 .RegisterSubtype<InStoreOrderRequest>("Instore")
                 .RegisterSubtype<UberEatsOrderRequest>("UberEats")
+                .RegisterSubtype<MrDOrderRequest>("MrD")
                 .Build());
             
             using var reader = new StreamReader(req.Body);
@@ -45,6 +47,7 @@ app.UseFastEndpoints(options =>
                 .SerializeDiscriminatorProperty()
                 .RegisterSubtype<InStoreModel>("Instore")
                 .RegisterSubtype<UberEatsModel>("UberEats")
+                .RegisterSubtype<MrDModel>("MrD")
                 .Build());
             
             rsp.ContentType = cType;

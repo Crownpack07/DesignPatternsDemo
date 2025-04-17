@@ -38,5 +38,11 @@ public static class RegisterOrdersInfrastructure
             cm.AutoMap();
             cm.SetIsRootClass(true);
         });
+        
+        BsonClassMap.RegisterClassMap<MrDOrder>(cm =>
+        {
+            cm.AutoMap();
+            cm.SetIsRootClass(true);
+        });
     }
 }

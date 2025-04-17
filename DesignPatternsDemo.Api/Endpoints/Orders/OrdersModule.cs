@@ -1,5 +1,6 @@
 using DesignPatternsDemo.Api.Endpoints.Orders.Models;
 using DesignPatternsDemo.Api.Endpoints.Orders.Models.InStoreModel;
+using DesignPatternsDemo.Api.Endpoints.Orders.Models.MrD;
 using DesignPatternsDemo.Api.Endpoints.Orders.Models.UberEats;
 using DesignPatternsDemo.Domain.Orders;
 using DesignPatternsDemo.Kernel;
@@ -19,6 +20,7 @@ public static class OrdersModule
         //Register Factories
         services.AddSingleton<IOrderFactory, UberEatsOrderFactory>();
         services.AddSingleton<IOrderFactory, InStoreOrderFactory>();
+        services.AddSingleton<IOrderFactory, MrDOrderFactory>();
         
         return services;
     }
