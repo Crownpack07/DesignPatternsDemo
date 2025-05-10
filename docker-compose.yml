@@ -1,0 +1,20 @@
+services:
+  mongo:
+    image: "mongo:latest"
+    container_name: mongodb
+    environment:
+      MONGODB_ADVERTISED_HOSTNAME: mongo
+      MONGODB_REPLICA_SET_MODE: primary
+      MONGODB_ROOT_PASSWORD: localpassword
+      MONGODB_REPLICA_SET_KEY: replicasetkey123
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: localpassword
+      MONGO_REPLICA_SET_NAME: rs0
+    ports:
+      - 27018:27017
+    volumes:
+      - "mongodb_volume:/data/db"
+
+volumes:
+  mongodb_volume:
+    driver: local

@@ -10,6 +10,7 @@
     <ItemGroup>
         <PackageReference Include="FastEndpoints" Version="5.34.0" />
         <PackageReference Include="FastEndpoints.Swagger" Version="5.34.0" />
+        <PackageReference Include="JsonSubTypes" Version="2.0.1" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0"/>
     </ItemGroup>
 
@@ -17,6 +18,12 @@
       <Content Include="..\.dockerignore">
         <Link>.dockerignore</Link>
       </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DesignPatternsDemo.Domain\DesignPatternsDemo.Domain.csproj" />
+      <ProjectReference Include="..\DesignPatternsDemo.Infrastructure\DesignPatternsDemo.Infrastructure.csproj" />
+      <ProjectReference Include="..\DesignPatternsDemo.Kernel\DesignPatternsDemo.Kernel.csproj" />
     </ItemGroup>
 
 </Project>
